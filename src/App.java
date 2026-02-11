@@ -13,8 +13,8 @@ public class App {
             System.out.println("\nPrompt " + (i + 1) + ":");
             
             try {
-                agente.processarPrompt(prompts[i]);
-                agente.lerPalavra(prompts[i]);
+                agente.lerPalavra(prompts[i]);       
+                agente.processarPrompt(prompts[i]);  
                 agente.chamarModeloExterno();
                 System.out.println("Sucesso");
                 
@@ -26,6 +26,8 @@ public class App {
                 
             } catch (ErroComunicacaoIAException e) {
                 System.out.println("[LOG-AGENTE] [" + e.getTimestamp() + "] Erro: " + e.getMessage());
+            }finally {
+                System.out.println("Tentativa finalizada");
             }
         }
     }
