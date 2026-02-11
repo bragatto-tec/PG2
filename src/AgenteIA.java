@@ -17,3 +17,16 @@ public class AgenteIA {
             throw new PromptInadequadoException("Palavra inadequada detectada: " + prompt);
         }
     }
+
+
+    public void chamarModeloExterno() throws ErroComunicacaoIAException {
+    double nmrAleatorio = Math.random();  
+
+    if (nmrAleatorio > 0.7) {  
+        throw new ErroComunicacaoIAException("Falha ao chamar modelo.");
+    }
+    System.out.println("Modelo externo chamado com sucesso.");
+    }
+
+    
+}
